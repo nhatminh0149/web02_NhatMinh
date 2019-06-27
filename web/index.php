@@ -3,5 +3,6 @@
 ?>
 
 <a href="pages/gioithieu.php">Gioithieu</a>
-<a href="pages/trangchu.php">trangchu</a>
+<br>
+<a href="pages/trangchu.php">Trangchu</a>
 
