@@ -23,14 +23,20 @@
         <th>Mô tả</th>
         <th>Chức năng</th>
     </tr>
-    <?php foreach($data as $row) {?>
+    <?php foreach($data as $row) : ?>
         <tr>
         <td> <?php echo $row['lsp_ma']; ?></td>
         <td> <?php echo $row['lsp_ten']; ?></td>
         <td> <?php echo $row['lsp_mota']; ?></td>
-        <td><a href="/web02_NhatMinh/loaisanpham/sua.php?khoachinh=<?php echo $row['lsp_ma']; ?>">Sửa</td>
+
+        <!-- Truyền dữ liệu GET trên URL, theo dạng ?KEY1=VALUE1&KEY2=VALUE2 -->
+        <td><a href="/web02_NhatMinh/salomon/loaisanpham/sua.php?lsp_ma=<?php echo $row['lsp_ma']; ?>"> Sửa </a> 
+             <a href="/web02_NhatMinh/salomon/loaisanpham/xoa.php?lsp_ma=<?php echo $row['lsp_ma']; ?>"> Xóa </a> 
+        </td>
         </tr>
         
-    <?php } ?>
+    <?php endforeach; ?>
 
 </table>
+<br>
+<a href="/web02_NhatMinh/salomon/loaisanpham/themmoi.php?lsp_ma=<?php echo $row['lsp_ma']; ?>"> Thêm </a> 
