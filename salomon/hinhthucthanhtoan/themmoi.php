@@ -7,11 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Đây là chức năng Thêm Hinh thuc Thanh Toan</h1>
+    <h1>Đây là chức năng Thêm hình thức thanh toán</h1>
 
     <?php
-        $lsp_ma=$_GET['httt_ma'];
-        //echo 'Đang sửa khóa chính là: ' . $lsp_ma;
+        $httt_ma=$_GET['httt_ma'];
+        //echo 'Đang sửa khóa chính là: ' . $httt_ma;
 
         require_once __DIR__ .'/../dbconnect.php';
 
@@ -19,7 +19,7 @@
         $resultSelect = mysqli_query($conn, $sqlSelect);
 
         $htttRow = mysqli_fetch_array($resultSelect, MYSQLI_ASSOC);
-        // print_r($loaisanphamRow);
+        // print_r($htttRow);
     ?>
 
     <form id="themhttt" name="themhttt" method="post" action="">

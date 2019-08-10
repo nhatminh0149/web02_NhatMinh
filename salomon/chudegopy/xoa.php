@@ -10,9 +10,9 @@
     <?php
         require_once __DIR__ . '/../dbconnect.php';
 
-        $km_ma = $_GET['km_ma'];
+        $cdgy_ma = $_GET['cdgy_ma'];
 
-        $sqlDelete = "DELETE FROM khuyenmai WHERE km_ma = $km_ma;";
+        $sqlDelete = "DELETE FROM chudegopy WHERE cdgy_ma = $cdgy_ma;";
         $resultSelect = mysqli_query($conn, $sqlDelete);
 
         header('location:danhsach.php');

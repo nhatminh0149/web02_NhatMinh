@@ -1,11 +1,11 @@
 <?php
     require_once __DIR__ .'/../dbconnect.php';
 
+    //Lấy dl từ lsp
     $sql= <<<EOT
     SELECT * FROM loaisanpham;
 EOT;
     $resultLsp=mysqli_query($conn,$sql);
-
     $datalsp=[];
     while($row=mysqli_fetch_array($resultLsp, MYSQLI_ASSOC)){
         $datalsp[]=array(
@@ -14,11 +14,11 @@ EOT;
         );
     }
 
+    //Lấy dl từ nsx
     $sql= <<<EOT
     SELECT * FROM nhasanxuat;
 EOT;
     $resultNsx=mysqli_query($conn,$sql);
-
     $dataNsx=[];
     while($row=mysqli_fetch_array($resultNsx, MYSQLI_ASSOC)){
         $dataNsx[]=array(
@@ -27,11 +27,12 @@ EOT;
         );
     }
 
+
+     //Lấy dl từ km
     $sql= <<<EOT
     SELECT * FROM khuyenmai;
 EOT;
     $resultKm=mysqli_query($conn,$sql);
-
     $dataKm=[];
     while($row=mysqli_fetch_array($resultKm, MYSQLI_ASSOC)){
         $dataKm[]=array(
@@ -54,7 +55,7 @@ EOT;
     Loại sản phẩm: 
     <select name="lsp_ma" id="lsp_ma">
         <?php foreach($datalsp as $lsp): ?>
-            <option value="<?= $lsp['lsp_ma']?>"><?= $lsp['lsp_ten']?></option>
+            <option value="<?= $lsp['lsp_ma']?>"> <?= $lsp['lsp_ten']?>  </option>
         <?php endforeach; ?>
     </select>
     <br><br>
