@@ -42,6 +42,8 @@ EOT;
             <th>Loại sản phẩm</th>
             <th>Nhà sản xuất</th>
             <th>Khuyến mãi</th>
+            <th>Chức năng</th>
+
         </tr>
     </thead>
 
@@ -59,6 +61,7 @@ EOT;
             <td><?= $row['lsp_ten'] ?></td>
             <td><?= $row['nsx_ten'] ?></td>
             <td><?= $row['km_ten'] ?></td>
+            <td><a href="/web02_NhatMinh/salomon/sanpham/sua.php?sp_ma=<?php echo $row['sp_ma']; ?>"> Sửa </a> 
         </tr>
         <?php endforeach; ?>
     </tbody>
