@@ -45,4 +45,4 @@
 
 </table>
 <br>
-<a href="/web02_NhatMinh/salomon/khuyenmai/themmoi.php?km_ma=<?php echo $row['km_ma']; ?>"> Thêm </a> 
+<a href="/web02_NhatMinh/salomon/khuyenmai/themmoi.php"> Thêm </a> 

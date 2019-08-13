@@ -36,4 +36,4 @@
 
 </table>
 <br>
-<a href="/web02_NhatMinh/salomon/hinhthucthanhtoan/themmoi.php?httt_ma=<?php echo $row['httt_ma']; ?>"> Thêm </a> 
+<a href="/web02_NhatMinh/salomon/hinhthucthanhtoan/themmoi.php"> Thêm </a> 

@@ -1,20 +1,35 @@
 <?php
     require_once __DIR__ .'/../dbconnect.php';
 
+    //Lấy dữ liệu cần chỉnh sửa
     $sp_ma=$_GET['sp_ma'];
 
     $sqlSelect="SELECT * FROM sanpham WHERE sp_ma= $sp_ma;";
     $resultSelect = mysqli_query($conn, $sqlSelect);
 
-        $sanphamRow = mysqli_fetch_array($resultSelect, MYSQLI_ASSOC);
-
+    $sanphamRow = [];
+    while ($row = mysqli_fetch_array($resultSelect, MYSQLI_ASSOC)) {
+        $sanphamRow = array(
+            'sp_ma' => $row['sp_ma'],
+            'sp_ten' => $row['sp_ten'],
+            'sp_gia' => $row['sp_gia'],
+            'sp_giacu' => $row['sp_giacu'],
+            'sp_mota_ngan' => $row['sp_mota_ngan'],
+            'sp_mota_chitiet' => $row['sp_mota_chitiet'],
+            'sp_ngaycapnhat' => $row['sp_ngaycapnhat'],
+            'sp_soluong' => $row['sp_soluong'],
+            'lsp_ma' => $row['lsp_ma'],
+            'nsx_ma' => $row['nsx_ma'],
+            'km_ma' => $row['km_ma'],
+        );
+    }
 
 
     //Lấy dl từ lsp
-    $sql= <<<EOT
+    $sqlLsp= <<<EOT
     SELECT * FROM loaisanpham;
 EOT;
-    $resultLsp=mysqli_query($conn,$sql);
+    $resultLsp=mysqli_query($conn,$sqlLsp);
     $datalsp=[];
     while($row=mysqli_fetch_array($resultLsp, MYSQLI_ASSOC)){
         $datalsp[]=array(
@@ -24,10 +39,10 @@ EOT;
     }
 
     //Lấy dl từ nsx
-    $sql= <<<EOT
+    $sqlNsx= <<<EOT
     SELECT * FROM nhasanxuat;
 EOT;
-    $resultNsx=mysqli_query($conn,$sql);
+    $resultNsx=mysqli_query($conn,$sqlNsx);
     $dataNsx=[];
     while($row=mysqli_fetch_array($resultNsx, MYSQLI_ASSOC)){
         $dataNsx[]=array(
@@ -38,10 +53,10 @@ EOT;
 
 
      //Lấy dl từ km
-    $sql= <<<EOT
+    $sqlKm= <<<EOT
     SELECT * FROM khuyenmai;
 EOT;
-    $resultKm=mysqli_query($conn,$sql);
+    $resultKm=mysqli_query($conn,$sqlKm);
     $dataKm=[];
     while($row=mysqli_fetch_array($resultKm, MYSQLI_ASSOC)){
         $dataKm[]=array(
@@ -65,7 +80,7 @@ EOT;
     <select name="lsp_ma" id="lsp_ma">
         <?php foreach($datalsp as $lsp) : ?>
             <?php if($lsp['lsp_ma'] == $sanphamRow['lsp_ma']) { ?>
-                <option value="<?= $lsp['lsp_ma'] ?>" selected><?= $lsp['lsp_ten'] ?></option>
+                <option value="<?= $lsp['lsp_ma'] ?>" selected> <?= $lsp['lsp_ten'] ?></option>
             <?php } else { ?>
                 <option value="<?= $lsp['lsp_ma'] ?>"><?= $lsp['lsp_ten'] ?></option>
             <?php } ?>
@@ -114,20 +129,20 @@ EOT;
         $sqlUpdate =<<<EOT
         UPDATE sanpham
         SET
-            sp_ten=N'$sp_ten',
+            sp_ten= N'$sp_ten',
             sp_gia= $sp_gia,
-            sp_giacu=$sp_giacu,
-            sp_mota_ngan=N'$sp_mota_ngan',
-            sp_mota_chitiet=N'$sp_mota_chitiet',
+            sp_giacu= $sp_giacu,
+            sp_mota_ngan= N'$sp_mota_ngan',
+            sp_mota_chitiet= N'$sp_mota_chitiet',
             sp_ngaycapnhat='$sp_ngaycapnhat',
             sp_soluong=$sp_soluong,
-            lsp_ma=$lsp_ma,
-            nsx_ma=$nsx_ma,
-            km_ma=$km_ma
+            lsp_ma= $lsp_ma,
+            nsx_ma= $nsx_ma,
+            km_ma= $km_ma
         WHERE sp_ma=$sp_ma;
 EOT;
         //print_r($sqlUpdate); die;
-        mysqli_query($conn, $sqlUpdate);
+        $resultUpdate = mysqli_query($conn, $sqlUpdate);
         //echo 'Lưu thành công!';
         header('location:danhsach.php');
 

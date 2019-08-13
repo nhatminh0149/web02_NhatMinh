@@ -36,4 +36,4 @@
 
 </table>
 <br>
-<a href="/web02_NhatMinh/salomon/chudegopy/themmoi.php?cdgy_ma=<?php echo $row['cdgy_ma']; ?>"> Thêm </a> 
+<a href="/web02_NhatMinh/salomon/chudegopy/themmoi.php"> Thêm </a> 

@@ -39,4 +39,4 @@
 
 </table>
 <br>
-<a href="/web02_NhatMinh/salomon/loaisanpham/themmoi.php?lsp_ma=<?php echo $row['lsp_ma']; ?>"> Thêm </a> 
+<a href="/web02_NhatMinh/salomon/loaisanpham/themmoi.php"> Thêm </a> 

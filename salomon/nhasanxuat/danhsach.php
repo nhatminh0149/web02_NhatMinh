@@ -36,4 +36,4 @@
 
 </table>
 <br>
-<a href="/web02_NhatMinh/salomon/nhasanxuat/themmoi.php?nsx_ma=<?php echo $row['nsx_ma']; ?>"> Thêm </a> 
+<a href="/web02_NhatMinh/salomon/nhasanxuat/themmoi.php"> Thêm </a> 

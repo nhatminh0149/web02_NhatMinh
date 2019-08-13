@@ -56,3 +56,4 @@ EOT;
         <?php endforeach; ?>
     </tbody>
 </table>
+<a href="/web02_NhatMinh/salomon/gopy/them.php"> Thêm </a>

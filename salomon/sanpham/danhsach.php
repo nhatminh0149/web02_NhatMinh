@@ -8,6 +8,7 @@
     LEFT JOIN khuyenmai km ON sp.km_ma=km.km_ma;
 EOT;
     $result=mysqli_query($conn,$sql);
+
     $data=[];
     while($row=mysqli_fetch_array($result, MYSQLI_ASSOC)){
         $data[]=array(
@@ -61,8 +62,10 @@ EOT;
             <td><?= $row['lsp_ten'] ?></td>
             <td><?= $row['nsx_ten'] ?></td>
             <td><?= $row['km_ten'] ?></td>
-            <td><a href="/web02_NhatMinh/salomon/sanpham/sua.php?sp_ma=<?php echo $row['sp_ma']; ?>"> Sửa </a> 
+            <td><a href="/web02_NhatMinh/salomon/sanpham/sua.php?sp_ma=<?php echo $row['sp_ma']; ?>"> Sửa </a>
+                <a href="/web02_NhatMinh/salomon/sanpham/xoa.php?sp_ma=<?php echo $row['sp_ma']; ?>">Xóa</a> </td>
         </tr>
         <?php endforeach; ?>
     </tbody>
 </table>
+<a href="/web02_NhatMinh/salomon/sanpham/them.php"> Thêm </a>
