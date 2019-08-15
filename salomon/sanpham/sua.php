@@ -69,7 +69,7 @@ EOT;
 ?>
 
 <form id="suasp" name="suasp" method="post" action="">
-    Tên sản phẩm: <input type="text" id="sp_ten" name="sp_ten" value="<?= $sanphamRow ['sp_ten']?>"  ><br><br>
+    Tên sản phẩm: <input type="text" id="sp_ten" name="sp_ten" value="<?= $sanphamRow ['sp_ten']?>" class="form-control" ><br><br>
     Giá sản phẩm: <input type="text" id="sp_gia" name="sp_gia" value="<?= $sanphamRow ['sp_gia']?>" ><br><br>
     Giá cũ sản phẩm: <input type="text" id="sp_giacu" name="sp_giacu" value="<?= $sanphamRow ['sp_giacu']?>" ><br><br>
     Mô tả ngắn sản phẩm: <input type="text" id="sp_mota_ngan" name="sp_mota_ngan" value="<?= $sanphamRow ['sp_mota_ngan']?>" ><br><br>

@@ -29,7 +29,7 @@ EOT;
     die;*/
 ?>
 
-<table border = 1>
+<table class="table table-bordered table-hover table-responsive">
     <thead>
         <tr>
             <th>Mã sản phẩm</th>
@@ -62,10 +62,10 @@ EOT;
             <td><?= $row['lsp_ten'] ?></td>
             <td><?= $row['nsx_ten'] ?></td>
             <td><?= $row['km_ten'] ?></td>
-            <td><a href="/web02_NhatMinh/salomon/sanpham/sua.php?sp_ma=<?php echo $row['sp_ma']; ?>"> Sửa </a>
-                <a href="/web02_NhatMinh/salomon/sanpham/xoa.php?sp_ma=<?php echo $row['sp_ma']; ?>">Xóa</a> </td>
+            <td><a href="/web02_NhatMinh/salomon/index.php?page=sanpham_sua&sp_ma=<?php echo $row['sp_ma']; ?>" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sửa </a>
+                <a href="/web02_NhatMinh/salomon/sanpham/xoa.php?sp_ma=<?php echo $row['sp_ma']; ?>" class="btn btn-danger"> <i class="fa fa-trash" aria-hidden="true"></i> Xóa</a> </td>
         </tr>
         <?php endforeach; ?>
     </tbody>
 </table>
-<a href="/web02_NhatMinh/salomon/sanpham/them.php"> Thêm </a>
+<a href="/web02_NhatMinh/salomon/index.php?page=sanpham_them" class="btn btn-primary"> <i class="fa fa-plus-circle" aria-hidden="true"></i> Thêm Sản Phẩm</a>

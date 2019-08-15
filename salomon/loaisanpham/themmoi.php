@@ -11,7 +11,7 @@
 
     <form id="themlsp" name="themlsp" method="post" action="">
         Loại sản phẩm:       <input type="text" id="lsp_ten" name="lsp_ten"?><br><br>
-                            <input type="submit" name="them" id="them" value="Thêm Loại sản phẩm" />
+                            <input type="submit" name="them" id="them" class="btn btn-primary" value="Thêm Loại sản phẩm" />
     </form>
 
     <?php
