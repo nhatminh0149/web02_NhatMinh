@@ -26,7 +26,7 @@
         Mã loại sản phẩm:   <input type="text" id="lsp_ma" name="lsp_ma" readonly value="<?= $loaisanphamRow['lsp_ma'] ?>" /><br><br>
         Tên sản phẩm:       <input type="text" id="lsp_ten" name="lsp_ten" value="<?= $loaisanphamRow['lsp_ten'] ?>" /><br><br>
         Mô tả sản phẩm:     <input type="text" id="lsp_mota" name="lsp_mota" value="<?= $loaisanphamRow['lsp_mota'] ?>" /><br><br>
-                             <input type="submit" name="sua" id="sua" value="Sửa" />
+                             <input type="submit" name="sua" id="sua" value="Sửa" class="btn btn-primary"/>
     </form>
 
     <?php

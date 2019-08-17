@@ -25,7 +25,7 @@
     <form id="suansx" name="suansx" method="post" action="">
         Mã nhà sản suất:   <input type="text" id="nsx_ma" name="nsx_ma" readonly value="<?= $nhasanxuatRow['nsx_ma'] ?>" /><br><br>
         Tên nhà sản xuất:   <input type="text" id="nsx_ten" name="nsx_ten" value="<?= $nhasanxuatRow['nsx_ten'] ?>" /><br><br>
-                             <input type="submit" name="sua" id="sua" value="Sửa" />
+                             <input type="submit" name="sua" id="sua" class="btn btn-primary" value="Sửa" />
     </form>
 
     <?php

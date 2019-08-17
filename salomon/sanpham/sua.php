@@ -70,14 +70,14 @@ EOT;
 
 <form id="suasp" name="suasp" method="post" action="">
     Tên sản phẩm: <input type="text" id="sp_ten" name="sp_ten" value="<?= $sanphamRow ['sp_ten']?>" class="form-control" ><br><br>
-    Giá sản phẩm: <input type="text" id="sp_gia" name="sp_gia" value="<?= $sanphamRow ['sp_gia']?>" ><br><br>
-    Giá cũ sản phẩm: <input type="text" id="sp_giacu" name="sp_giacu" value="<?= $sanphamRow ['sp_giacu']?>" ><br><br>
-    Mô tả ngắn sản phẩm: <input type="text" id="sp_mota_ngan" name="sp_mota_ngan" value="<?= $sanphamRow ['sp_mota_ngan']?>" ><br><br>
-    Mô tả chi tiết sản phẩm: <input type="text" id="sp_mota_chitiet" name="sp_mota_chitiet" value="<?= $sanphamRow ['sp_mota_chitiet']?>" ><br><br>
-    Ngày cập nhật sản phẩm: <input type="text" id="sp_ngaycapnhat" name="sp_ngaycapnhat" value="<?= $sanphamRow ['sp_ngaycapnhat']?>" ><br><br>
-    Số lượng sản phẩm: <input type="text" id="sp_soluong" name="sp_soluong" value="<?= $sanphamRow ['sp_soluong']?>" ><br><br>
+    Giá sản phẩm: <input type="text" id="sp_gia" name="sp_gia" value="<?= $sanphamRow ['sp_gia']?>" class="form-control" ><br><br>
+    Giá cũ sản phẩm: <input type="text" id="sp_giacu" name="sp_giacu" value="<?= $sanphamRow ['sp_giacu']?>" class="form-control"><br><br>
+    Mô tả ngắn sản phẩm: <input type="text" id="sp_mota_ngan" name="sp_mota_ngan" value="<?= $sanphamRow ['sp_mota_ngan']?>" class="form-control"><br><br>
+    Mô tả chi tiết sản phẩm: <input type="text" id="sp_mota_chitiet" name="sp_mota_chitiet" value="<?= $sanphamRow ['sp_mota_chitiet']?>" class="form-control" ><br><br>
+    Ngày cập nhật sản phẩm: <input type="text" id="sp_ngaycapnhat" name="sp_ngaycapnhat" value="<?= $sanphamRow ['sp_ngaycapnhat']?>" class="form-control" ><br><br>
+    Số lượng sản phẩm: <input type="text" id="sp_soluong" name="sp_soluong" value="<?= $sanphamRow ['sp_soluong']?>" class="form-control"><br><br>
     Loại sản phẩm: 
-    <select name="lsp_ma" id="lsp_ma">
+    <select name="lsp_ma" id="lsp_ma" class="form-control">
         <?php foreach($datalsp as $lsp) : ?>
             <?php if($lsp['lsp_ma'] == $sanphamRow['lsp_ma']) { ?>
                 <option value="<?= $lsp['lsp_ma'] ?>" selected> <?= $lsp['lsp_ten'] ?></option>
@@ -88,7 +88,7 @@ EOT;
     </select>
     <br><br>
      Nhà sản xuất: 
-     <select name="nsx_ma" id="nsx_ma">
+     <select name="nsx_ma" id="nsx_ma" class="form-control">
         <?php foreach($dataNsx as $nsx) : ?>
             <?php if($nsx['nsx_ma'] == $sanphamRow['nsx_ma']) { ?>
                 <option value="<?= $nsx['nsx_ma'] ?>" selected><?= $nsx['nsx_ten'] ?></option>
@@ -99,7 +99,7 @@ EOT;
     </select>
     <br><br>
      Khuyến mãi: 
-     <select name="km_ma" id="km_ma">
+     <select name="km_ma" id="km_ma" class="form-control">
         <?php foreach($dataKm as $km) : ?>
             <?php if($km['km_ma'] == $sanphamRow['km_ma']) { ?>
                 <option value="<?= $km['km_ma'] ?>" selected><?= $km['km_ten'] ?></option>
@@ -109,7 +109,7 @@ EOT;
         <?php endforeach; ?>
     </select>
     <br><br>
-    <input type="submit" id="ssp" name="ssp" value="Sửa sản phẩm">
+    <input type="submit" id="ssp" name="ssp" value="Sửa sản phẩm" class="btn btn-primary"> 
 </form>
 
 <?php

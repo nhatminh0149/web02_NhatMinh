@@ -33,8 +33,8 @@
             <td> <?php echo $row['lsp_mota']; ?></td>
 
             <!-- Truyền dữ liệu GET trên URL, theo dạng ?KEY1=VALUE1&KEY2=VALUE2 -->
-            <td><a href="/web02_NhatMinh/salomon/loaisanpham/sua.php?lsp_ma=<?php echo $row['lsp_ma']; ?>" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sửa </a> 
-                <a href="/web02_NhatMinh/salomon/loaisanpham/xoa.php?lsp_ma=<?php echo $row['lsp_ma']; ?>" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa </a> 
+            <td><a href="/web02_NhatMinh/salomon/index.php?page=loaisanpham_sua&lsp_ma=<?php echo $row['lsp_ma']; ?>" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sửa </a> 
+                <a href="/web02_NhatMinh/salomon/index.php?page=loaisanpham_xoa&lsp_ma=<?php echo $row['lsp_ma']; ?>" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa </a> 
             </td>
         </tr>
         <?php endforeach; ?>
