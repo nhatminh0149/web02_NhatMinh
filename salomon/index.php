@@ -19,8 +19,10 @@
     <div class="container">
         <!-- Header -->
         <div class="row">
-            <div class="col-md-6 col-8 col-xl-7">LOGO</div>
-            <div class="col-md-6 col-4 col-xl-5">Tên CTY</div>
+            <div class="col-md-3">
+                <img src="images.jpg" alt="logo" width="100%" height="100">
+            </div>
+            <div class="col-md-9">Tên CTY</div>
         </div>
 
         <!-- Main content -->

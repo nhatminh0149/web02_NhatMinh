@@ -95,7 +95,7 @@ EOT;
     VALUES (N'$sp_ten', $sp_gia, $sp_giacu, N'$sp_mota_ngan', N'$sp_mota_chitiet', '$sp_ngaycapnhat',  $sp_soluong,  $lsp_ma, $nsx_ma, $km_ma);";
      //print_r($sqlInsert); die;
         mysqli_query($conn, $sqlInsert);
-        header('location:danhsach.php');
+        header('location:/web02_NhatMinh/salomon/index.php?page=sanpham_danhsach');
     }
 
 ?>

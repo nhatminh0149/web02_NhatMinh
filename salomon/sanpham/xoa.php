@@ -15,7 +15,8 @@
         $sqlDelete = "DELETE FROM sanpham WHERE sp_ma = $sp_ma;";
         $resultSelect = mysqli_query($conn, $sqlDelete);
 
-        header('location:/web02_NhatMinh/salomon/sanpham/danhsach.php');
+        //header('location:/web02_NhatMinh/salomon/sanpham/danhsach.php');
+        header('location:/web02_NhatMinh/salomon/index.php?page=sanpham_danhsach');
     ?>
 </body>
 </html>

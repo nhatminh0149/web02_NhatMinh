@@ -144,7 +144,7 @@ EOT;
         //print_r($sqlUpdate); die;
         $resultUpdate = mysqli_query($conn, $sqlUpdate);
         //echo 'Lưu thành công!';
-        header('location:danhsach.php');
+        header('location:/web02_NhatMinh/salomon/index.php?page=sanpham_danhsach');
 
       
      

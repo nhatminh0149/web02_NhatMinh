@@ -25,7 +25,7 @@
             mysqli_query($conn, $sqlInsert);
 
             // Sau khi cập nhật dữ liệu, tự động điều hướng về trang Danh sách
-            header('location:danhsach.php');
+            header('location:/web02_NhatMinh/salomon/index.php?page=loaisanpham_danhsach');
         }
     ?>
     

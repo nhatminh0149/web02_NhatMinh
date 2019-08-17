@@ -15,7 +15,7 @@
         $sqlDelete = "DELETE FROM loaisanpham WHERE lsp_ma = $lsp_ma;";
         $resultSelect = mysqli_query($conn, $sqlDelete);
 
-        header('location:danhsach.php');
+        header('location:/web02_NhatMinh/salomon/index.php?page=loaisanpham_danhsach');
     ?>
 </body>
 </html>
