@@ -10,9 +10,7 @@
 
     <link rel="stylesheet" href="public/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
     <style>
-        div{
-            border: pink solid 1px;
-        }
+      
     </style>
 </head>
 <body>
@@ -160,6 +158,8 @@
     <script src="public/vendor/jquery/jquery.min.js"></script>
     <script src="public/vendor/popper/popper.min.js"></script>
     <script src="public/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="public/vendor/sweetalert2/sweetalert2.all.min.js"></script>
+    <script src="public/js/sanpham/sanpham.js"></script>
 </body>
 </html>
 
