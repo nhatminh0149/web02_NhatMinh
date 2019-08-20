@@ -23,9 +23,9 @@
     ?>
 
     <form id="sualsp" name="sualsp" method="post" action="">
-        Mã loại sản phẩm:   <input type="text" id="lsp_ma" name="lsp_ma" readonly value="<?= $loaisanphamRow['lsp_ma'] ?>" /><br><br>
-        Tên sản phẩm:       <input type="text" id="lsp_ten" name="lsp_ten" value="<?= $loaisanphamRow['lsp_ten'] ?>" /><br><br>
-        Mô tả sản phẩm:     <input type="text" id="lsp_mota" name="lsp_mota" value="<?= $loaisanphamRow['lsp_mota'] ?>" /><br><br>
+        Mã loại sản phẩm:   <input type="text" id="lsp_ma" name="lsp_ma" readonly value="<?= $loaisanphamRow['lsp_ma']?>" class="form-control"/><br><br>
+        Tên sản phẩm:       <input type="text" id="lsp_ten" name="lsp_ten" value="<?= $loaisanphamRow['lsp_ten'] ?>" class="form-control"/><br><br>
+        Mô tả sản phẩm:     <input type="text" id="lsp_mota" name="lsp_mota" value="<?= $loaisanphamRow['lsp_mota'] ?>"class="form-control" /><br><br>
                              <input type="submit" name="sua" id="sua" value="Sửa" class="btn btn-primary"/>
     </form>
 

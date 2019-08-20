@@ -90,12 +90,58 @@ EOT;
         $nsx_ma=$_POST['nsx_ma'];
         $km_ma=isset($_POST['km_ma']) ? $_POST['km_ma'] : 'NULL';
 
-        $sqlInsert="INSERT INTO sanpham
-	(sp_ten, sp_gia, sp_giacu, sp_mota_ngan, sp_mota_chitiet, sp_ngaycapnhat, sp_soluong, lsp_ma, nsx_ma, km_ma)
-    VALUES (N'$sp_ten', $sp_gia, $sp_giacu, N'$sp_mota_ngan', N'$sp_mota_chitiet', '$sp_ngaycapnhat',  $sp_soluong,  $lsp_ma, $nsx_ma, $km_ma);";
-     //print_r($sqlInsert); die;
-        mysqli_query($conn, $sqlInsert);
-        header('location:/web02_NhatMinh/salomon/index.php?page=sanpham_danhsach');
+        // Kiểm tra ràng buộc dữ liệu (Validation)
+        // Tạo biến lỗi để chứa thông báo lỗi
+        $errors = [];
+        // required
+        // ''
+        // NULL
+        if (empty($sp_ten)) {
+            $errors['sp_ten'][] = [
+                'rule' => 'required',
+                'rule_value' => true,
+                'value' => $sp_ten,
+                'msg' => 'Vui lòng nhập tên Sản phẩm'
+            ];
+        }
+        // minlength 3
+        if (!empty($sp_ten) && strlen($sp_ten) < 3) {
+            $errors['sp_ten'][] = [
+                'rule' => 'minlength',
+                'rule_value' => 3,
+                'value' => $sp_ten,
+                'msg' => 'Tên Sản phẩm phải có ít nhất 3 ký tự'
+            ];
+        }
+        // maxlength 50
+        if (!empty($sp_ten) && strlen($sp_ten) > 50) {
+            $errors['sp_ten'][] = [
+                'rule' => 'maxlength',
+                'rule_value' => 50,
+                'value' => $sp_ten,
+                'msg' => 'Tên Sản phẩm không được vượt quá 50 ký tự'
+            ];
+        }
+        // Nếu như có lỗi -> thông báo lỗi ra màn hình
+        if (!empty($errors)) { ?>
+    <div id="thongbao" class="alert alert-danger face" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <ul>
+            <?php foreach($errors as $fields) : ?>
+                <?php foreach($fields as $field) : ?>
+                <li><?= $field['msg']; ?></li>
+                <?php endforeach; ?>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+        <?php
+        }
+        else {
+            $sqlInsert = "INSERT INTO sanpham(sp_ten, sp_gia, sp_giacu, sp_mota_ngan, sp_mota_chitiet, sp_ngaycapnhat, sp_soluong, lsp_ma, nsx_ma, km_ma) VALUES (N'$sp_ten', $sp_gia, $sp_giacu, N'$sp_mota_ngan', N'$sp_mota_chitiet', '$sp_ngaycapnhat', $sp_soluong, $lsp_ma, $nsx_ma, $km_ma);";
+            $resultInsert = mysqli_query($conn, $sqlInsert);
+        }
     }
 
 ?>

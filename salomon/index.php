@@ -159,7 +159,30 @@
     <script src="public/vendor/popper/popper.min.js"></script>
     <script src="public/vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="public/vendor/sweetalert2/sweetalert2.all.min.js"></script>
-    <script src="public/js/sanpham/sanpham.js"></script>
+   
+
+     <?php if($page == 'loaisanpham_danhsach') : ?>
+        <script src="public/js/loaisanpham/loaisanpham.js"></script>
+    <?php elseif($page == 'sanpham_danhsach') : ?>
+        <script src="public/js/sanpham/sanpham.js"></script>
+        <script src="public/js/sanpham/sanpham-search.js"></script>
+
+    <?php elseif($page == 'sanpham_them') : ?>
+        <script src="public/vendor/jqueryvalidation/jquery.validate.min.js"></script>
+        <script src="public/vendor/jqueryvalidation/localization/messages_vi.min.js"></script>
+        <!--<script src="public/js/sanpham/sanpham-validate.js"></script>-->
+
+    <?php elseif($page == 'loaisanpham_themmoi') : ?>
+        <script src="public/vendor/jqueryvalidation/jquery.validate.min.js"></script>
+        <script src="public/vendor/jqueryvalidation/localization/messages_vi.min.js"></script>
+        <!--<script src="public/js/loaisanpham/loaisanpham-validate.js"></script>-->
+
+    <?php elseif($page == 'loaisanpham_sua') : ?>
+        <script src="public/vendor/jqueryvalidation/jquery.validate.min.js"></script>
+        <script src="public/vendor/jqueryvalidation/localization/messages_vi.min.js"></script>
+        <script src="public/js/loaisanpham/loaisanpham-sua-validate.js"></script>
+
+    <?php endif ?>
 </body>
 </html>
 
