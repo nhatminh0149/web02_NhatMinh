@@ -136,6 +136,8 @@
                         include('gopy/them.php');
                     }
 
+                    //page hình ảnh
+
                     
                    
                     
