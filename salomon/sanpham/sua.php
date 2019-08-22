@@ -95,7 +95,7 @@ EOT;
             <?php } else { ?>
                 <option value="<?= $nsx['nsx_ma'] ?>"><?= $nsx['nsx_ten'] ?></option>
             <?php } ?>
-        <?php endforeach; ?>
+        <?php endforeach;?>
     </select>
     <br><br>
      Khuyến mãi: 
@@ -144,7 +144,6 @@ EOT;
         //print_r($sqlUpdate); die;
         $resultUpdate = mysqli_query($conn, $sqlUpdate);
         //echo 'Lưu thành công!';
-        header('location:/web02_NhatMinh/salomon/index.php?page=sanpham_danhsach');
-    }
-
+        header('location:/web02_NhatMinh/salomon/index.php?page=sanpham_danhsach'); 
+}
 ?>

@@ -18,7 +18,7 @@
         <!-- Header -->
         <div class="row">
             <div class="col-md-3">
-                <img src="images.jpg" alt="logo" width="100%" height="100">
+                <img src="/web02_NhatMinh/salomon/hinhanh/logo.jpg" alt="logo" width="100%" height="100">
             </div>
             <div class="col-md-9">Tên CTY</div>
         </div>

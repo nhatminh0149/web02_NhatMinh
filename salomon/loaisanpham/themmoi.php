@@ -72,6 +72,7 @@
         else {
             $sqlInsert = "INSERT INTO `loaisanpham`(lsp_ten) VALUES (N'$lsp_ten');";
             $resultInsert = mysqli_query($conn, $sqlInsert);
+            header('location:/web02_NhatMinh/salomon/index.php?page=loaisanpham_danhsach');
         }
     }
     ?>
