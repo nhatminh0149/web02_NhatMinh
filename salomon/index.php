@@ -18,7 +18,7 @@
         <!-- Header -->
         <div class="row">
             <div class="col-md-3">
-                <img src="/web02_NhatMinh/salomon/hinhanh/logo.jpg" alt="logo" width="100%" height="100">
+                LOGO
             </div>
             <div class="col-md-9">Tên CTY</div>
         </div>
@@ -33,12 +33,13 @@
                     <li class="list-group-item"><a href="?page=hinhthucthanhtoan_danhsach">Danh sách Hình thức thanh toán</a></li>
                     <li class="list-group-item"><a href="?page=khuyenmai_danhsach">Danh sách Khuyến mãi</a></li>
                     <li class="list-group-item"><a href="?page=chudegopy_danhsach">Danh sách Chủ đề góp ý</a></li>
+                    <li class="list-group-item"><a href="?page=hinhsanpham_danhsach">Danh sách Hình sản phẩm</a></li>
                 </ul>
             </div>
             <div class="col-md-9">
                 <?php
                     //tạo biến page, nếu tồn tại biến page thì hiện page, nếu chưa có thì xuất hiện trang danh sách sản phẩm
-                    $page = isset($_GET['page']) ? $_GET['page'] : 'sanpham_danhsach';
+                    $page = isset($_GET['page']) ? $_GET['page'] : 'loaisanpham_danhsach';
 
                     //page loaisanpham
                     if($page == 'loaisanpham_danhsach'){
@@ -137,7 +138,12 @@
                     }
 
                     //page hình ảnh
-
+                    else if($page =='hinhsanpham_danhsach'){
+                        include('hinhsanpham/danhsach.php');
+                    }
+                    else if($page =='hinhsanpham_them'){
+                        include('hinhsanpham/them.php');
+                    }
                     
                    
                     
@@ -165,24 +171,50 @@
 
      <?php if($page == 'loaisanpham_danhsach') : ?>
         <script src="public/js/loaisanpham/loaisanpham.js"></script>
-    <?php elseif($page == 'sanpham_danhsach') : ?>
+        
+
+     <?php elseif($page == 'sanpham_danhsach') : ?>
         <script src="public/js/sanpham/sanpham.js"></script>
         <script src="public/js/sanpham/sanpham-search.js"></script>
+
+    <?php elseif($page == 'nhasanxuat_danhsach') : ?>
+        <script src="public/js/nhasanxuat/nhasanxuat.js"></script>
+
+    <?php elseif($page == 'hinhsanpham_danhsach') : ?>
+    <script src="public/js/hinhsanpham/hinhsanpham.js"></script>
+       
 
     <?php elseif($page == 'sanpham_them') : ?>
         <script src="public/vendor/jqueryvalidation/jquery.validate.min.js"></script>
         <script src="public/vendor/jqueryvalidation/localization/messages_vi.min.js"></script>
-        <!--<script src="public/js/sanpham/sanpham-validate.js"></script>-->
+        <!--<script src="public/js/sanpham/sanpham-them-validate.js"></script>-->
 
     <?php elseif($page == 'loaisanpham_themmoi') : ?>
         <script src="public/vendor/jqueryvalidation/jquery.validate.min.js"></script>
         <script src="public/vendor/jqueryvalidation/localization/messages_vi.min.js"></script>
-        <!--<script src="public/js/loaisanpham/loaisanpham-validate.js"></script>-->
+        <script src="public/js/loaisanpham/loaisanpham-them-validate.js"></script>
+    
+    <?php elseif($page == 'nhasanxuat_themmoi') : ?>
+        <script src="public/vendor/jqueryvalidation/jquery.validate.min.js"></script>
+        <script src="public/vendor/jqueryvalidation/localization/messages_vi.min.js"></script>
+        <script src="public/js/nhasanxuat/nhasanxuat-them-validate.js"></script>
+    
+
+    <?php elseif($page == 'sanpham_sua') : ?>
+        <script src="public/vendor/jqueryvalidation/jquery.validate.min.js"></script>
+        <script src="public/vendor/jqueryvalidation/localization/messages_vi.min.js"></script>
+        <script src="public/js/sanpham/sanpham-sua-validate.js"></script>
+
 
     <?php elseif($page == 'loaisanpham_sua') : ?>
         <script src="public/vendor/jqueryvalidation/jquery.validate.min.js"></script>
         <script src="public/vendor/jqueryvalidation/localization/messages_vi.min.js"></script>
         <script src="public/js/loaisanpham/loaisanpham-sua-validate.js"></script>
+
+    <?php elseif($page == 'nhasanxuat_sua') : ?>
+        <script src="public/vendor/jqueryvalidation/jquery.validate.min.js"></script>
+        <script src="public/vendor/jqueryvalidation/localization/messages_vi.min.js"></script>
+        <script src="public/js/nhasanxuat/nhasanxuat-sua-validate.js"></script>
 
     <?php endif ?>
 </body>

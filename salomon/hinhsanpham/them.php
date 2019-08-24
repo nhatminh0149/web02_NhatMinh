@@ -47,7 +47,7 @@ EOT;
         }
         $sqlInsert="INSERT INTO hinhsanpham(hsp_tentaptin, sp_ma) VALUES ('$hsp_tentaptin', $sp_ma);";
         $result=mysqli_query($conn,$sqlInsert);
-        header('location:/web02_NhatMinh/salomon/hinhsanpham/danhsach.php');
+        header('location:/web02_NhatMinh/salomon/index.php?page=hinhsanpham_danhsach');
     }
 
 ?>

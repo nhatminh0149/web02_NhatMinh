@@ -10,8 +10,8 @@
     <h1>Đây là chức năng Thêm nhà sản xuất</h1>
 
     <form id="themnsx" name="themnsx" method="post" action="">
-        Tên sản phẩm:       <input type="text" id="nsx_ten" name="nsx_ten"?><br><br>
-                            <input type="submit" name="them" id="them" value="Thêm Nhà sản xuất" />
+        Tên sản phẩm:       <input type="text" id="nsx_ten" name="nsx_ten"? class="form-control"><br><br>
+                            <input type="submit" name="them" id="them" value="Thêm Nhà sản xuất" class="btn btn-primary" />
     </form>
 
     <?php
@@ -24,7 +24,7 @@
             mysqli_query($conn, $sqlInsert);
 
             // Sau khi cập nhật dữ liệu, tự động điều hướng về trang Danh sách
-            header('location:danhsach.php');
+            header('location:/web02_NhatMinh/salomon/index.php?page=nhasanxuat_danhsach');
         }
     ?>
     

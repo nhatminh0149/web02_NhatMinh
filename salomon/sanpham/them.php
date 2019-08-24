@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <?php
     require_once __DIR__ .'/../dbconnect.php';
 
@@ -63,12 +64,12 @@ EOT;
     <select name="nsx_ma" id="nsx_ma" class="form-control">
         <?php foreach($dataNsx as $nsx): ?>
             <option value="<?= $nsx['nsx_ma']?>"><?= $nsx['nsx_ten']?></option>
-        <?php endforeach; ?>
+        <?php endforeach;?>
     </select>
     <br><br>
      Khuyến mãi: 
     <select name="km_ma" id="km_ma" class="form-control">
-        <?php foreach($dataKm as $km): ?>
+        <?php foreach($dataKm as $km):?>
             <option value="<?= $km['km_ma']?>"><?= $km['km_ten']?></option>
         <?php endforeach; ?>
     </select>
@@ -136,13 +137,14 @@ EOT;
             <?php endforeach; ?>
         </ul>
     </div>
-        <?php
+    <?php
         }
         else {
             $sqlInsert = "INSERT INTO sanpham(sp_ten, sp_gia, sp_giacu, sp_mota_ngan, sp_mota_chitiet, sp_ngaycapnhat, sp_soluong, lsp_ma, nsx_ma, km_ma) VALUES (N'$sp_ten', $sp_gia, $sp_giacu, N'$sp_mota_ngan', N'$sp_mota_chitiet', '$sp_ngaycapnhat', $sp_soluong, $lsp_ma, $nsx_ma, $km_ma);";
-            $resultInsert = mysqli_query($conn, $sqlInsert);
+            mysqli_query($conn, $sqlInsert);
             header('location:/web02_NhatMinh/salomon/index.php?page=sanpham_danhsach');
+            ob_enf_fluch();
         }
     }
 
-?>
+    ?>

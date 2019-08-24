@@ -59,8 +59,9 @@ EOT;
            
 
             <!-- Truyền dữ liệu GET trên URL, theo dạng ?KEY1=VALUE1&KEY2=VALUE2 -->
-            <td><a href="/web02_NhatMinh/salomon/index.php?page=hinhsanpham_sua&hsp_ma=<?php echo $row['hsp_ma']; ?>" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sửa </a> 
-                <a href="/web02_NhatMinh/salomon/index.php?page=loaisanpham_xoa&lsp_ma=<?php echo $row['lsp_ma']; ?>" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa </a> 
+            <td>
+                <a href="/web02_NhatMinh/salomon/hinhsanpham/sua.php?hsp_ma=<?= $row['hsp_ma']; ?>">Sửa</a>
+                <a href="/web02_NhatMinh/salomon/hinhsanpham/xoa.php?hsp_ma=<?= $row['hsp_ma']; ?>">Xóa</a>
             </td>
         </tr>
         <?php endforeach; ?>
@@ -68,7 +69,7 @@ EOT;
 
 </table>
 <br>
-<a href="/web02_NhatMinh/salomon/hinhsanpham/them.php" class="btn btn-primary"> <i class="fa fa-plus-circle" aria-hidden="true"></i> Thêm Loại Sản Phẩm </a> 
+<a href="/web02_NhatMinh/salomon/index.php?page=hinhsanpham_them" class="btn btn-primary"> <i class="fa fa-plus-circle" aria-hidden="true"></i> Thêm Loại Sản Phẩm </a> 
 
 </body>
 </html>

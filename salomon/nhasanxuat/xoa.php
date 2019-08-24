@@ -15,7 +15,7 @@
         $sqlDelete = "DELETE FROM nhasanxuat WHERE nsx_ma = $nsx_ma;";
         $resultSelect = mysqli_query($conn, $sqlDelete);
 
-        header('location:danhsach.php');
+        header('location:/web02_NhatMinh/salomon/index.php?page=nhasanxuat_danhsach');
     ?>
 </body>
 </html>

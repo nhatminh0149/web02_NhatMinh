@@ -16,16 +16,7 @@ $(document).ready(function () {
                 minlength: 5,
                 maxlength: 9
             },
-            sp_mota_ngan: {
-                required: true,
-                minlength: 10,
-                maxlength: 500
-            },
-            sp_mota_chitiet: {
-                required: true,
-                minlength: 100,
-                maxlength: 500
-            },
+
             sp_soluong: {
                 required: true,
                 minlength: 1,
@@ -49,16 +40,7 @@ $(document).ready(function () {
                 minlength: "Giá Sản phẩm phải từ 10k",
                 maxlength: "Giá Sản phẩm không được vượt quá 900tr"
             },
-            sp_mota_ngan: {
-                required: "Vui lòng nhập mô tả ngắn của Sản phẩm",
-                minlength: "Mô tả Sản phẩm phải từ 10 kí tự",
-                maxlength: "Mô tả Sản phẩm không được vượt quá 500 kí tự"
-            },
-            sp_mota_chitiet: {
-                required: "Vui lòng nhập mô tả chi tiết của Sản phẩm",
-                minlength: "Mô tả ct Sản phẩm phải từ 100 kí tự",
-                maxlength: "Mô tả ct Sản phẩm không được vượt quá 500 kí tự"
-            },
+            
             sp_soluong: {
                 required: "Vui lòng nhập số lượng của Sản phẩm",
                 minlength: " Sản phẩm phải có số lượng từ 1 sp",

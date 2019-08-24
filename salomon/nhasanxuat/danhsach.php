@@ -15,7 +15,7 @@
     die;*/
 ?>
 
-<table border=1>
+<table class="table table-bordered table-hover">
     <tr>
         <th>Mã</th>
         <th>Tên nhà sản xuất</th>
@@ -27,8 +27,11 @@
         <td> <?php echo $row['nsx_ten']; ?></td>
 
         <!-- Truyền dữ liệu GET trên URL, theo dạng ?KEY1=VALUE1&KEY2=VALUE2 -->
-        <td><a href="/web02_NhatMinh/salomon/index.php?page=nhasanxuat_sua&nsx_ma=<?php echo $row['nsx_ma']; ?>" class="btn btn-primary"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sửa </a> 
-             <a href="/web02_NhatMinh/salomon/index.php?page=nhasanxuat_xoa&nsx_ma=<?php echo $row['nsx_ma']; ?>" class="btn btn-danger"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Xóa </a> 
+        <td>
+            <a href="/web02_NhatMinh/salomon/index.php?page=nhasanxuat_sua&nsx_ma=<?php echo $row['nsx_ma']; ?>" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sửa </a>
+            <button class="btn btn-danger btn-delete" data-nsx-ma="<?= $row['nsx_ma'] ?>">
+                <i class="fa fa-trash" aria-hidden="true"></i>&nbsp;Xóa
+            </button>
         </td>
         </tr>
         

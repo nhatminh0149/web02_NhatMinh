@@ -1,7 +1,7 @@
 $(document).ready(function () {
-    $("#sualsp").validate({
+    $("#suansx").validate({
         rules: {
-            lsp_ten: {
+            nsx_ten: {
                 required: true,
                 minlength: 3,
                 maxlength: 50
@@ -10,15 +10,10 @@ $(document).ready(function () {
           
         },
         messages: {
-            lsp_ten: {
-                required: "Vui lòng nhập tên Loại Sản phẩm",
-                minlength: "Tên Loại Sản phẩm phải từ 3 ký tự",
-                maxlength: "Tên Loại Sản phẩm không được vượt quá 50 ký tự"
-            },
-            lsp_mota: {
-                required: "Vui lòng nhập tên Loại Sản phẩm",
-                minlength: "Tên Loại Sản phẩm phải từ 3 ký tự",
-                maxlength: "Tên Loại Sản phẩm không được vượt quá 500 ký tự"
+            nsx_ten: {
+                required: "Vui lòng nhập tên NSX Sản phẩm",
+                minlength: "Tên NSX Sản phẩm phải từ 3 ký tự",
+                maxlength: "Tên NSX Sản phẩm không được vượt quá 50 ký tự"
             },
             
         },

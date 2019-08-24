@@ -23,8 +23,8 @@
     ?>
 
     <form id="suansx" name="suansx" method="post" action="">
-        Mã nhà sản suất:   <input type="text" id="nsx_ma" name="nsx_ma" readonly value="<?= $nhasanxuatRow['nsx_ma'] ?>" /><br><br>
-        Tên nhà sản xuất:   <input type="text" id="nsx_ten" name="nsx_ten" value="<?= $nhasanxuatRow['nsx_ten'] ?>" /><br><br>
+        Mã nhà sản suất:   <input type="text" id="nsx_ma" name="nsx_ma" readonly value="<?= $nhasanxuatRow['nsx_ma'] ?>" class="form-control" /><br><br>
+        Tên nhà sản xuất:   <input type="text" id="nsx_ten" name="nsx_ten" value="<?= $nhasanxuatRow['nsx_ten'] ?>" class="form-control"/><br><br>
                              <input type="submit" name="sua" id="sua" class="btn btn-primary" value="Sửa" />
     </form>
 
@@ -38,7 +38,7 @@
             echo 'Lưu thành công!';
 
             // Sau khi cập nhật dữ liệu, tự động điều hướng về trang Danh sách
-            header('location:danhsach.php');
+            header('location:/web02_NhatMinh/salomon/index.php?page=nhasanxuat_danhsach');
         }
     ?>
 </body>

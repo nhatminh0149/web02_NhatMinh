@@ -1,3 +1,5 @@
+<?php ob_start(); ?>
+
 <?php
     require_once __DIR__ .'/../dbconnect.php';
 
@@ -141,9 +143,10 @@ EOT;
             km_ma= $km_ma
         WHERE sp_ma=$sp_ma;
 EOT;
-        //print_r($sqlUpdate); die;
-        $resultUpdate = mysqli_query($conn, $sqlUpdate);
-        //echo 'Lưu thành công!';
-        header('location:/web02_NhatMinh/salomon/index.php?page=sanpham_danhsach'); 
+
+    $resultUpdate = mysqli_query($conn, $sqlUpdate);
+    header('location:/web02_NhatMinh/salomon/index.php?page=sanpham_danhsach');
+    ob_enf_fluch();
 }
 ?>
+
