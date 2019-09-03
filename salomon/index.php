@@ -1,3 +1,6 @@
+<?php
+    require_once __DIR__ . '/dbconnect.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,6 +37,11 @@
                     <li class="list-group-item"><a href="?page=khuyenmai_danhsach">Danh sách Khuyến mãi</a></li>
                     <li class="list-group-item"><a href="?page=chudegopy_danhsach">Danh sách Chủ đề góp ý</a></li>
                     <li class="list-group-item"><a href="?page=hinhsanpham_danhsach">Danh sách Hình sản phẩm</a></li>
+                    <?php if(isset($_SESSION['username']) && !empty($_SESSION['username'])) : ?>
+                        <li class="list-group-item"><a href="/web02_NhatMinh/salomon/pages/dangxuat.php">Đăng xuất</a></li>
+                    <?php else : ?>
+                        <li class="list-group-item"><a href="/web02_NhatMinh/salomon/pages/dangnhap.php">Đăng nhập</a></li>
+                    <?php endif ?>
                 </ul>
             </div>
             <div class="col-md-9">
@@ -144,7 +152,11 @@
                     else if($page =='hinhsanpham_them'){
                         include('hinhsanpham/them.php');
                     }
-                    
+
+                    //page dangnhap
+                    else if($page =='pages_dangnhap'){
+                        include('pages/dangnhap.php');
+                    }
                    
                     
                 ?>

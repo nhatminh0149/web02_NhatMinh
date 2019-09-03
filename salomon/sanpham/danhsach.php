@@ -1,5 +1,16 @@
 <?php
     require_once __DIR__ .'/../dbconnect.php';
+
+     // Kiểm tra xác thực tài khoản
+    if(isset($_SESSION['username']) && !empty($_SESSION['username'])) {
+    // Đã đăng nhập rồi
+        echo 'Đã đăng nhập!';
+    } else {
+    // Chưa đăng nhập
+        echo 'Bạn chưa đăng nhập. Vui lòng <a href="http://localhost:1000/web02_NhatMinh/salomon/pages/dangnhap.php">click vào đây</a> để đến trang Đăng nhập';
+        die;
+    }
+
     $sql= <<<EOT
     SELECT sp.sp_ma, sp.sp_ten, sp.sp_gia, sp.sp_giacu, sp.sp_mota_ngan, sp.sp_mota_chitiet, sp.sp_ngaycapnhat, sp.sp_soluong, lsp.lsp_ten, nsx.nsx_ten, km.km_ten
     FROM sanpham sp
