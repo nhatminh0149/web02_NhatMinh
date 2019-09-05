@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="vi-VN">
+    <head>
+        <meta charset="UTF-8">
+        <title>Twig Example</title>
+    </head>
+    <body>
+    <table border="1" style="width: 80%;">
+        <thead>
+            <tr>
+                <td>Ten cong ty</td>
+                <td>Dia chi</td>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for congty in congty %}
+                <tr>
+                    <td>{{ congty.tencongty }}</td>
+                    <td>{{ congty.diachi }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </body>
+</html>
