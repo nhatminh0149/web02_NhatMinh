@@ -35,7 +35,7 @@ EOT;
 <?php
     if(isset($_POST['thsp'])){
         $sp_ma=$_POST['sp_ma'];
-        $upload_dir="./../public/uploads/";
+        $upload_dir="./../../public/uploads/";
 
         if($_FILES['hsp_tentaptin']['error']>0){
             echo "File bị lỗi"; die;
@@ -47,7 +47,7 @@ EOT;
         }
         $sqlInsert="INSERT INTO hinhsanpham(hsp_tentaptin, sp_ma) VALUES ('$hsp_tentaptin', $sp_ma);";
         $result=mysqli_query($conn,$sqlInsert);
-        header('location:/web02_NhatMinh/salomon/index.php?page=hinhsanpham_danhsach');
+        header('location:/web02_NhatMinh/salomon/backend/index.php?page=hinhsanpham_danhsach');
     }
 
 ?>

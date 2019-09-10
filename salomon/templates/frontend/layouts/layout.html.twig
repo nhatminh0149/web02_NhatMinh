@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/web02_NhatMinh/salomon/public/vendor/font-awesome-4.7.0/css/font-awesome.min.css" type="text/css" />
 
     <!-- Custom css - Các file css do chúng ta tự viết -->
-    <link rel="stylesheet" href="/web02_NhatMinh/salomon/public/frontend/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="/web02_NhatMinh/salomon/public/frontend/css/custom-style.css" type="text/css" />
     
   <title>
         Trang web bán hàng Salomon |
@@ -27,7 +27,7 @@
     {{ include('frontend/layouts/includes/header.html.twig') }}
     <!-- end header -->
 
-    <main role="main">
+    <main role="main" class="content-wrapper">
         <!-- Block content - Đục lỗ (placeholder) trên giao diện bố cục chung, đặt tên là `content` -->
         {% block content %}
         {% endblock %}
@@ -42,7 +42,7 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="/web02_NhatMinh/salomon/public/vendor/jquery/jquery.min.js"></script>
     <script src="/web02_NhatMinh/salomon/public/vendor/popperjs/popper.min.js"></script>
-    <script src="/web02_NhatMinh/salomon/public/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/web02_NhatMinh/salomon/public/vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Custom script - Các file js do mình tự viết -->
     <script src="/web02_NhatMinh/salomon/public/frontend/js/app.js"></script>
