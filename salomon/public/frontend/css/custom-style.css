@@ -1,10 +1,29 @@
-  
 .content-wrapper {
-    margin-top: 70px;
+    margin-top: 56px;
 }
 
 /* Hiệu chỉnh CSS cho Slider Trang chủ */
-#carouselExampleControls > .carousel-inner > .carousel-item > img {
+#myCarousel > .carousel-inner > .carousel-item > img {
     width: 100%;
     height: 550px;
 }
+
+.featurette-heading {
+    margin-top: 7rem; /* 1rem ~ 16px */
+    font-weight: 400;
+    font-size: 50px;
+}
+
+.marketing .row .col-lg-4{
+    margin-top: 5rem; 
+}
+
+.danhsachsanpham .container .row .col-md-4 .card-body .card-title{
+    height: 50px;
+}
+
+.danhsachsanpham .container .row .col-md-4 .card .card-img-top{
+    height: 250px;
+}
+  
+  
