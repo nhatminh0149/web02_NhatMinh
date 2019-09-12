@@ -5,7 +5,7 @@ require_once __DIR__.'/../../bootstrap.php';
 
 require_once __DIR__ .'/../../dbconnect.php';
 // Yêu cầu `Twig` vẽ giao diện được viết trong file `home.html.twig`
-echo $twig->render('frontend/pages/home.html.twig');
+// echo $twig->render('frontend/pages/home.html.twig');
 
 // 2. Chuẩn bị câu truy vấn $sql
 $sqlDanhSachSanPham = <<<EOT
