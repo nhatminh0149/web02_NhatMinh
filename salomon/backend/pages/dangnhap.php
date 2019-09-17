@@ -1,5 +1,5 @@
 <?php
-    require_once __DIR__ .'/../dbconnect.php';
+    require_once __DIR__ .'/../../dbconnect.php';
 ?>
 
 <form id="dangky" name="dangky" method="post" action="">
