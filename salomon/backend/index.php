@@ -1,5 +1,6 @@
 <?php
     require_once __DIR__ . '/../dbconnect.php';
+    $page = isset($_GET['page']) ? $_GET['page'] : 'sanpham_danhsach';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,9 +13,10 @@
     <link rel="stylesheet" href="./../public/vendor/bootstrap/css/bootstrap.min.css" type="text/css" />
 
     <link rel="stylesheet" href="./../public/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
-    <style>
-      
-    </style>
+
+    <?php if($page == 'dashboard') : ?>
+        <link rel="stylesheet" href="./../public/vendor/Chart.js/Chart.min.css">
+    <?php endif ?>
 </head>
 <body>
     <div class="container">
@@ -157,6 +159,10 @@
                     else if($page =='pages_dangnhap'){
                         include('pages/dangnhap.php');
                     }
+                    //page dashboard
+                    else if($page =='dashboard'){
+                        include('pages/dashboard.php');
+                    }
                    
                     
                 ?>
@@ -228,6 +234,9 @@
         <script src="./../public/vendor/jqueryvalidation/localization/messages_vi.min.js"></script>
         <script src="./../public/js/nhasanxuat/nhasanxuat-sua-validate.js"></script>
 
+    <?php elseif($page == 'dashboard') : ?>
+        <script src="./../public/vendor/Chart.js/Chart.min.js"></script>
+        <script src="./../public/js/pages/dashboard.js"></script>
     <?php endif ?>
 </body>
 </html>
