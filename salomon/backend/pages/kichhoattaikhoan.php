@@ -3,7 +3,7 @@
      $kh_tendangnhap=$_GET['kh_tendangnhap'];
      $kh_trangthai=$_GET['kh_trangthai'];
 
-     $sqlSelect="SELECT * FROM khachhang WHERE kh_tendangnhap=' $kh_tendangnhap' AND kh_trangthai='$kh_trangthai';";
+    $sqlSelect="SELECT * FROM khachhang WHERE kh_tendangnhap=' $kh_tendangnhap' AND kh_trangthai='$kh_trangthai';";
     $kq=mysqli_query($conn,$sqlSelect);
     $kqRow=mysqli_fetch_array( $kq, MYSQLI_ASSOC);
     if(empty($kqRow)) {

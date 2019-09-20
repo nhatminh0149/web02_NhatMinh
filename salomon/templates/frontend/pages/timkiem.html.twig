@@ -178,11 +178,11 @@ Liên hệ
                         <div class="card mb-4 shadow-sm">
                             {% if sanpham.hsp_tentaptin %}
                             <a href="/web02_NhatMinh/salomon/frontend/sanpham/chitiet.php?sp_ma={{ sanpham.sp_ma }}">
-                                <img class="bd-placeholder-img card-img-top" width="100%" height="350" src="/web02/assets/uploads/{{ sanpham.hsp_tentaptin }}" />
+                                <img class="bd-placeholder-img card-img-top" width="100%" height="350" src="/web02_NhatMinh/salomon/public/uploads/{{ sanpham.hsp_tentaptin }}" />
                             </a>
                             {% else %}
                             <a href="/web02_NhatMinh/salomon/frontend/sanpham/chitiet.php?sp_ma={{ sanpham.sp_ma }}">
-                                <img class="bd-placeholder-img card-img-top" width="100%" height="350" src="/web02/assets/shared/img/default-image_600.png" />
+                                <img class="bd-placeholder-img card-img-top" width="100%" height="350" src="/web02_NhatMinh/salomon/public/img/no-image.jpg" />
                             </a>
                             {% endif %}
                             <div class="card-body">
@@ -225,6 +225,7 @@ Liên hệ
 {% block customscripts %}
 <script>
     $(document).ready(function () {
+
     });
 </script>
 {% endblock %}

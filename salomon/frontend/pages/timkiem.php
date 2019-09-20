@@ -4,6 +4,7 @@ require_once __DIR__ . '/../../bootstrap.php';
 // Truy vấn database để lấy danh sách
 // 1. Include file cấu hình kết nối đến database, khởi tạo kết nối $conn
 include_once(__DIR__ . '/../../dbconnect.php');
+
 /* --- 
    --- 2.Truy vấn dữ liệu Loại Sản phẩm 
    --- 
@@ -14,8 +15,10 @@ $sqlSelectLoaiSanPham = <<<EOT
     LEFT JOIN `sanpham` sp ON lsp.lsp_ma = sp.lsp_ma
     GROUP BY lsp.lsp_ma, lsp.lsp_ten
 EOT;
+
 // Thực thi câu truy vấn SQL để lấy về dữ liệu ban đầu của record 
 $resultSelectLoaiSanPham = mysqli_query($conn, $sqlSelectLoaiSanPham);
+
 // Khi thực thi các truy vấn dạng SELECT, dữ liệu lấy về cần phải phân tích để sử dụng
 // Thông thường, chúng ta sẽ sử dụng vòng lặp while để duyệt danh sách các dòng dữ liệu được SELECT
 // Ta sẽ tạo 1 mảng array để chứa các dữ liệu được trả về
@@ -28,6 +31,7 @@ while ($row = mysqli_fetch_array($resultSelectLoaiSanPham, MYSQLI_ASSOC)) {
     );
 }
 /* --- End Truy vấn dữ liệu Loại Sản phẩm --- */
+
 /* --- 
    --- 3.Truy vấn dữ liệu Nhà sản xuất
    --- 
@@ -52,6 +56,7 @@ while ($row = mysqli_fetch_array($resultSelectNhaSanXuat, MYSQLI_ASSOC)) {
     );
 }
 /* --- End Truy vấn dữ liệu Nhà sản xuất --- */
+
 /* --- 
    --- 4.Truy vấn dữ liệu Khuyến mãi
    --- 
@@ -79,6 +84,7 @@ while ($row = mysqli_fetch_array($resultSelectKhuyenMai, MYSQLI_ASSOC)) {
     );
 }
 /* --- End Truy vấn dữ liệu Khuyến mãi --- */
+
 // Giữ lại keyword mà người dùng tìm kiếm
 $keyword_tensanpham = isset($_GET['keyword_tensanpham']) ? $_GET['keyword_tensanpham'] : '';
 $keyword_loaisanpham = isset($_GET['keyword_loaisanpham']) ? $_GET['keyword_loaisanpham'] : [];
@@ -86,6 +92,7 @@ $keyword_nhasanxuat = isset($_GET['keyword_nhasanxuat']) ? $_GET['keyword_nhasan
 $keyword_khuyenmai = isset($_GET['keyword_khuyenmai']) ? $_GET['keyword_khuyenmai'] : [];
 $keyword_sotientu = isset($_GET['keyword_sotientu']) ? $_GET['keyword_sotientu'] : 0;
 $keyword_sotienden = isset($_GET['keyword_sotienden']) ? $_GET['keyword_sotienden'] : 50000000;
+
 // Câu lệnh query động tùy theo yêu cầu tìm kiếm của người dùng
 $sqlDanhSachSanPham = <<<EOT
     SELECT sp.sp_ma, sp.sp_ten, sp.sp_gia, sp.sp_giacu, sp.sp_mota_ngan, sp.sp_soluong, lsp.lsp_ten, MAX(hsp.hsp_tentaptin) AS hsp_tentaptin
@@ -94,7 +101,9 @@ $sqlDanhSachSanPham = <<<EOT
     LEFT JOIN `hinhsanpham` hsp ON sp.sp_ma = hsp.sp_ma
     LEFT JOIN `nhasanxuat` nsx ON sp.nsx_ma = nsx.nsx_ma
     LEFT JOIN `khuyenmai` km ON sp.km_ma = km.km_ma
+
 EOT;
+
 // Tìm theo tên sản phẩm
 $sqlWhereArr = [];
 if (!empty($keyword_tensanpham)) {
@@ -119,6 +128,7 @@ if (!empty($keyword_khuyenmai)) {
 if (!empty($keyword_sotientu) && !empty($keyword_sotienden)) {
     $sqlWhereArr[] = "sp.sp_gia BETWEEN $keyword_sotientu AND $keyword_sotienden";
 }
+
 // Câu lệnh cuối cùng
 if (count($sqlWhereArr) > 0) {
     $sqlWhere = " WHERE " . implode(' AND ', $sqlWhereArr);
@@ -130,6 +140,7 @@ EOT;
 // Thực thi câu truy vấn SQL để lấy về dữ liệu
 $result = mysqli_query($conn, $sqlDanhSachSanPham);
 // var_dump($sqlDanhSachSanPham);die;
+
 // Khi thực thi các truy vấn dạng SELECT, dữ liệu lấy về cần phải phân tích để sử dụng
 // Thông thường, chúng ta sẽ sử dụng vòng lặp while để duyệt danh sách các dòng dữ liệu được SELECT
 // Ta sẽ tạo 1 mảng array để chứa các dữ liệu được trả về
@@ -147,6 +158,7 @@ while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
         );
     }
 // dd($sqlWhereArr, $sqlWhere, $sqlDanhSachSanPham, $dataDanhSachSanPham);
+
 // Yêu cầu `Twig` vẽ giao diện được viết trong file `frontend/pages/timkiem.html.twig`
 echo $twig->render(
     'frontend/pages/timkiem.html.twig',
@@ -156,6 +168,7 @@ echo $twig->render(
         'danhsachnhasanxuat' => $nhasanxuatData,
         'danhsachkhuyenmai' => $khuyenmaiData,
         'danhsachsanpham' => $dataDanhSachSanPham,
+
         // Keyword người dùng đã tìm kiếm
         'keyword_tensanpham' => $keyword_tensanpham,
         'keyword_loaisanpham' => $keyword_loaisanpham,

@@ -119,7 +119,7 @@ while($row = mysqli_fetch_array($resultGY, MYSQLI_ASSOC))
     </div><!-- row -->
 
     <div class="row">
-        <!-- Biểu đồ thống kê loại sản phẩm -->
+        <!-- Biểu đồ thống kê doanh thu -->
         <div class="col-sm-12 col-lg-6">
             <canvas id="chartOfobjChartThongKeDoanhThu"></canvas>
             <button class="btn btn-outline-primary btn-sm form-control" id="refreshThongKeDoanhThu">Refresh dữ liệu</button>

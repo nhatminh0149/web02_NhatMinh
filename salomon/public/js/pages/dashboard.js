@@ -8,7 +8,9 @@ var $chartOfobjChartThongKeTopSanPhamBanChay = document.getElementById("chartOfo
 var $objChartThongKeDoanhThu;
 var $chartOfobjChartThongKeDoanhThu = document.getElementById("chartOfobjChartThongKeDoanhThu").getContext("2d");
 
+
 $(document).ready(function() {
+
     // Vẽ biểu đồ Loại sản phẩm
     $.ajax({
         url: '/web02_NhatMinh/salomon/backend/ajax/baocao-thongkeloaisanpham-ajax.php',
@@ -55,6 +57,8 @@ $(document).ready(function() {
         }
     });
 
+
+    // Vẽ biểu đồ 3 sp bán chạy
     $.ajax({
         url: '/web02_NhatMinh/salomon/backend/ajax/baocao-thongketopsanphambanchaynhat-ajax.php',
         type: "GET",
@@ -89,7 +93,7 @@ $(document).ready(function() {
                     },
                     title: {
                         display: true,
-                        text: "Thống kê Loại sản phẩm"
+                        text: "Thống kê 3 SP bán chạy nhất"
                     },
                     responsive: true
                 }
@@ -100,6 +104,8 @@ $(document).ready(function() {
         }
     });
 
+
+    // Vẽ biểu đồ doanh thu
     $.ajax({
         url: '/web02_NhatMinh/salomon/backend/ajax/baocao-thongkedoanhthu-ajax.php',
         type: "GET",
@@ -112,12 +118,12 @@ $(document).ready(function() {
                 myData.push(this.TongThanhTien);
             });
             myData.push(0); // tạo dòng số liệu 0
-            if (typeof $objChartThongKeLoaiSanPham !== "undefined") {
-                $objChartThongKeLoaiSanPham.destroy();
+            if (typeof $objChartThongKeDoanhThu !== "undefined") {
+                $objChartThongKeDoanhThu.destroy();
             }
             $objChartThongKeDoanhThu = new Chart($chartOfobjChartThongKeDoanhThu, {
                 // Kiểu biểu đồ muốn vẽ. Các bạn xem thêm trên trang ChartJS
-                type: "",
+                type: "line",
                 data: {
                     labels: myLabels,
                     datasets: [{
@@ -134,7 +140,7 @@ $(document).ready(function() {
                     },
                     title: {
                         display: true,
-                        text: "Thống kê Loại sản phẩm"
+                        text: "Thống kê doanh thu"
                     },
                     responsive: true
                 }
