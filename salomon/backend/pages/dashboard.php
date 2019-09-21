@@ -65,7 +65,7 @@ while($row = mysqli_fetch_array($resultGY, MYSQLI_ASSOC))
                     <div >Tổng số mặt hàng</div>
                 </div>
             </div>
-            <button class="btn btn-primary btn-sm form-control" id="refreshBaoCaoSanPham">Refresh dữ liệu</button>
+            <button class="btn btn-info btn-sm form-control" id="refreshBaoCaoSanPham">Refresh dữ liệu</button>
         </div> <!-- Tổng số mặt hàng -->
 
         <div class="col-sm-6 col-lg-3">
@@ -77,7 +77,7 @@ while($row = mysqli_fetch_array($resultGY, MYSQLI_ASSOC))
                     <div>Tổng số KH</div>
                 </div>
             </div>
-            <button class="btn btn-primary btn-sm form-control" id="refreshBaoCaoKhachHang">Refresh dữ liệu</button>
+            <button class="btn btn-danger btn-sm form-control" id="refreshBaoCaoKhachHang">Refresh dữ liệu</button>
         </div> <!-- Tổng số mặt hàng -->
 
         <div class="col-sm-6 col-lg-3">
@@ -89,7 +89,7 @@ while($row = mysqli_fetch_array($resultGY, MYSQLI_ASSOC))
                     <div>Tổng số đơn hàng</div>
                 </div>
             </div>
-            <button class="btn btn-primary btn-sm form-control" id="refreshBaoCaoDonHang">Refresh dữ liệu</button>
+            <button class="btn btn-warning btn-sm form-control" id="refreshBaoCaoDonHang">Refresh dữ liệu</button>
         </div> <!-- Tổng số mặt hàng -->
 
         <div class="col-sm-6 col-lg-3">
@@ -101,10 +101,10 @@ while($row = mysqli_fetch_array($resultGY, MYSQLI_ASSOC))
                     <div>Tổng số góp ý</div>
                 </div>
             </div>
-            <button class="btn btn-primary btn-sm form-control" id="refreshBaoCaoGopY">Refresh dữ liệu</button>
+            <button class="btn btn-secondary btn-sm form-control" id="refreshBaoCaoGopY">Refresh dữ liệu</button>
         </div> <!-- Tổng số mặt hàng -->
     </div><!-- row -->
-
+    <br>
     <div class="row">
         <!-- Biểu đồ thống kê loại sản phẩm -->
         <div class="col-sm-6 col-lg-6">
@@ -120,7 +120,7 @@ while($row = mysqli_fetch_array($resultGY, MYSQLI_ASSOC))
 
     <div class="row">
         <!-- Biểu đồ thống kê doanh thu -->
-        <div class="col-sm-12 col-lg-6">
+        <div class="col-sm-12 col-lg-12">
             <canvas id="chartOfobjChartThongKeDoanhThu"></canvas>
             <button class="btn btn-outline-primary btn-sm form-control" id="refreshThongKeDoanhThu">Refresh dữ liệu</button>
         </div><!-- col -->
